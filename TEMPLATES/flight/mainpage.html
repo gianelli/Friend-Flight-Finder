@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+<link type="text/css" rel="stylesheet" href="/css/lightblue.css"/>
+<script type="text/javascript" src="/myFlightApp.js"> </script>
+<script type="text/javascript" src="http://www.adityapanda.com/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	$("#logged_in").html("<button id='mainAction'>See Where People Live</button>");
+	$("#mainAction").bind("click", function(){ mainAction(); });
+	
+	//bind date button
+	$("#submitDates").bind("click", function() { getFlights(); return false; });
+	
+	//bind airportChange button
+	$("#airportChange button").bind("click", function() { checkAirport(); return false; });
+	
+});
+
+</script>
+<!--Google Analytics-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25238462-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+<div id="fb-root"></div>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({appId: '201599019877288', status: true, cookie: true,
+             xfbml: true});
+    //check login status
+    FB.getLoginStatus(function(response) {
+		if (response.status == 'connected') {
+			$('#logged_in').show();
+			$('#logged_out').hide();
+			$('#date').show();
+		}
+		else {
+			$('#logged_out').show();
+			$('#logged_in').hide();
+			$('#date').hide();
+		}
+	});
+
+    //show and hide main button, depending on login status
+    FB.Event.subscribe('auth.login', function(response) {	
+		$('#logged_out').hide();
+		$('#logged_in').show();
+		$('#date').show();
+	});
+	FB.Event.subscribe('auth.logout', function(response) {	
+		$('#logged_in').hide();
+		$('#logged_out').show();
+		$('#date').hide();
+		$('#output').hide();
+		showSidebarDefaultText();
+		
+	});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+ 
+</script>
+
+<!-- page wrapper -->
+<div id="wrapper">
+<div id="header"> <h1 id="title"> Where my friends at? </h1><h4>Check out where your friends live. Find out what it costs to visit.</h4></div>
+<div id="color_bar"> </div>
+<div id="main">
+	<div id="logged_out">
+		<h2 id="welcome_text">Login to see your friends.</h2>
+	</div>
+	<div id="login">
+		<div id="pic">
+			<fb:profile-pic uid="loggedinuser" size="square" facebook-logo="false">
+			</fb:profile-pic>
+		</div>
+		<fb:login-button autologoutlink="true" perms="email,user_birthday,user_location,friends_location">
+		</fb:login-button>
+		<div id="logged_in">	
+		</div>
+	</div>
+
+	<div id="date">
+		<h3 class='date_input'>Depart On:</h3>
+		<form name='dateInput'>
+		Day: <input type='text' name='departDay' size='2'></input>
+		Month: <select name='departMonth'>
+		
+		 <option value="01">Jan</option>
+ 		 <option value="02">Feb</option>
+ 		 <option value="03">March</option>
+ 		 <option value="04">April</option>
+ 		 <option value="05">May</option>
+ 		 <option value="06">June</option>
+ 		 <option value="07">July</option>
+ 		 <option value="08">Aug</option>
+		 <option value="09">Sept</option>
+ 		 <option value="10">Oct</option>
+ 		 <option value="11">Nov</option>
+ 		 <option value="12">Dec</option>
+  
+  		</select>
+  
+		<br><br>
+		<h3 class='date_input'>Return On:</h3>
+			Day: <input type='text' name='returnDay' size='2'></input>
+			Month: <select name='returnMonth'>
+		 <option value="01">Jan</option>
+ 		 <option value="02">Feb</option>
+ 		 <option value="03">March</option>
+ 		 <option value="04">April</option>
+ 		 <option value="05">May</option>
+ 		 <option value="06">June</option>
+ 		 <option value="07">July</option>
+ 		 <option value="08">Aug</option>
+		 <option value="09">Sept</option>
+ 		 <option value="10">Oct</option>
+ 		 <option value="11">Nov</option>
+ 		 <option value="12">Dec</option>
+  
+  		</select>
+		<br>
+		</form>
+		<button id='submitDates'>Check Prices</button>
+		
+	</div>
+	<!-- <div id="map"><button onclick="showMap();">View Map</a><div id="map_canvas"></div></div> -->
+	<div id="sort_options"> 
+		<div id="sort1"> </div>
+		<div id="sort2"></div> 
+		<div id="sort3"></div> 
+	</div>
+	<div id="output"></div>
+	<div id="footer">
+		Made by Gabrielle <a href="mailto:gianellig@gmail.com?Subject=Hi%20there"> gianellig@gmail.com </a>
+	</div>
+</div>
+<div id="sidebar"> 
+	<p>Hi, let's get started. <br><br> Once you're logged in, click the button "See Where People Live." </p>
+</div>
+<!--end of wrapper -->
+</div>
+</body>
+</html>

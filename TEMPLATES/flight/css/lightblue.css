@@ -1,0 +1,171 @@
+a:link {
+color:#E32636;
+text-decoration:none;
+}
+a:visited {
+color:#E32636;
+text-decoration:none;
+}
+body {
+background-color:#D1D1FF;
+}
+.loc_container {
+border-top:1px solid #D1D1E0;
+clear:both;
+height:100%;
+margin:20px;
+}
+.loc_header {
+height:70px;
+width:100%;
+}
+.loc_col1 {
+float:left;
+margin-bottom:20px;
+width:70%;
+}
+.loc_col2 {
+float:right;
+font-family:helvetica neue,helvetica,arial,sans-serif;
+font-size:20px;
+font-weight:bold;
+left:-20px;
+letter-spacing:0;
+position:relative;
+text-align:center;
+top:-30px;
+width:20%;
+}
+#footer {
+background-color:black;
+clear:left;
+color:white;
+font-family:verdana, arial,serif;
+font-size:13px;
+height:20px;
+margin-right:25px;
+margin-top:20px;
+text-align:center;
+width:100%;
+}
+#header {
+border-bottom:25px solid #E32636;
+height:100px;
+width:980px;
+}
+#color_bar {
+background-color:#FFCC00;
+height:10px;
+width:980px;
+}
+#title {
+color:black;
+font-family:verdana,arial,sans-serif;
+text-transform:uppercase;
+letter-spacing:.134em;
+font-size:134%;
+left:30px;
+position:relative;
+top:25px;
+}
+#sidebar {
+background-color:#D1D1E0;
+width:220px;
+float:left;
+margin-left:20px;
+font-family:verdana,Arial,sans-serif;
+font-size:14px;
+height:440px;
+margin-top:20px;
+padding:1px 20px 20px;
+
+}
+#about_me {
+font-family:georgia,times new roman,serif;
+margin-left:auto;
+margin-right:auto;
+margin-top:30px;
+padding:10px;
+text-align:left;
+width:150px;
+}
+#links {
+background-color:#FFFFC2;
+margin-top:30px;
+text-align:left;
+width:150px;
+}
+#main {
+background-color:white;
+border:1px solid #D1D1E0;
+float:left;
+font-family:Georgia,times new roman,serif;
+font-size:16px;
+margin-top:20px;
+width:700px;
+}
+#logo {
+float:right;
+font-size:18px;
+margin:30px 60px 20px 0;
+width:45%;
+}
+#img1 {
+float:left;
+margin-right:10px;
+}
+#img2 {
+float:left;
+margin-right:10px;
+}
+#pic {
+padding-top:3px;
+}
+#login {
+padding-top:25px;
+padding-bottom:25px;
+padding-left:60px;
+position:relative;
+}
+#getFriends {
+clear:both;
+}
+#output {
+clear:both;
+}
+#date {
+clear:both;
+margin:0px 0px 0px 20px;
+}
+h1 {
+font-family:helvetica neue,helvetica,arial,sans-serif;
+font-size:22px;
+}
+h2 {
+font-family:georgia,times new roman,serif;
+font-size:18px;
+letter-spacing:0;
+}
+h3 {
+color:#E32636;
+font-family:georgia;
+font-size:16px;
+letter-spacing:0;
+margin-top:-10px;
+}
+.price {
+color:#E32636;
+font-family:Helvetica neue,helvetica,arial,sans-serif;
+font-size:20px;
+font-weight:bold;
+}
+.friendName {
+height:20px;
+margin-bottom:5px;
+}
+#explanation {
+font-family:Tahoma;
+font-size:12px;
+margin:30px 0px 0px 40px;
+width:60%;
+}
